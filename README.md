@@ -4,7 +4,7 @@ this website is based on nodejs , html , css and java Script
 
 
 
-XXXXXXXX==========================================PLEASE READ IT CAREFULLY ===================================================XXXXX
+PLEASE READ IT CAREFULLY
 
 
 
