@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body
+{
+	font-family: 'Odibee Sans', cursive;
+	letter-spacing: 2px;
+	word-spacing: 3px;
+}
+
+nav
+{
+	font-family: 'Fredoka One', cursive;
+	letter-spacing: 2px;
+	word-spacing: 3px;
+}
+
+#hr1
+{
+    border: 0;
+    height: 0.25rem;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#hr2
+{
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+#hr2:before { 
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+
+#row
+{
+	display:flex;
+	 flex-wrap: wrap;
+}
+
+
+
+#vote
+{
+	 width: 30%;
+	 height: 5vh;
+	 margin-bottom: 3vh;
+	 letter-spacing: 10px;
+	 font-weight: 400;
+	 font-size: 1.8rem;
+
+}
+#welcome
+{
+	margin-bottom: 5vh;
+}
+
+.candidate
+{
+	margin-top: 10vh;
+}
+
+#piechart
+{
+	transform: translateY(50px);
+	justify-content: center;
+}
+
+.status
+{
+	text-align: center;
+	margin-top: 5vh;
+}
+
+#created
+{
+	margin-top: 100px;
+	font-size: 30px;
+}
+
+#desc
+{
+	font-size: 2rem;
+	letter-spacing: 2px;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>show election</title>
+</head>
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  		 	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+			<!--since the __dirname is used in app.js file there is no need to write full path of main css file 	 -->
+			<link rel="stylesheet" type="text/css" href="/stylesheet/voting.css">
+
+
+<body>
+	 <%- include("../partials/header") %>
+	<div class="container">
+		<div class="col-md-12 text-center"><h1 id="welcome">Welcome to <%=voting.name%> election</h1></div>
+
+		<% var date = voting.created_at + "" %>
+
+		<% var modified_date = date.slice(0,24) %>
+
+		<% var lastdate  = voting.closing_at + "" %>
+
+		<% var modified_close = lastdate.slice(0,24) %>
+
+		<% var now = new Date() + "" %>
+
+		<% var now1 = new Date() %>
+
+		<% var modified_now = now.slice(0,24) %>
+		
+
+		<h1 class="text-center "><span> Created At </span> <%= modified_date %></h1>
+
+		<h1 class="text-center "><span> Voting ends in </span> <%= modified_close %></h1>
+
+		<div class="row text-center" id="row"> 
+			<% var num = 0 %>
+
+			<% if(voting.contestants.length == 2){ %>
+
+			<% num = 6 %>
+
+			<% } else if(voting.contestants.length == 3){%>
+
+			<% num  = 4 %> 
+
+			<% } else {%>
+
+			<% num = 3 } %> 
+
+			<% voting.contestants.forEach(function(candidate){ %>
+
+			<div class="col-md-<%=num%> col-sm-12 col-xs-12">
+
+				<form action="/voting/<%=candidate._id %>/addvotes" method="POST">
+
+				<h1 class="candidate" ><%= candidate.name %></h1>
+
+				<h3>Vote count</h3>
+
+				<h1 class="Tvote"  ><%=candidate.votes.length %></h1>
+
+				<% if (now1 <= voting.closing_at) { %>
+
+				<button class="btn btn-primary" id="vote">VOTE!!</button>
+
+				<% } %>
+
+				</form>
+				
+			</div>
+
+		<% }); %>
+
+		</div>
+
+		<% if (now1 >= voting.closing_at) { %>
+
+		<h2 class="text-center">Voting is closed</h2>
+
+		<% } %>
+
+
+		<hr id="hr1">
+
+		<div class="container well">
+
+
+		<h1 class="text-center">About this election</h1>
+
+		<hr id="hr2">
+
+		<p id="desc" class="col-md-12 text-center"> <%= voting.desc %> </p>
+
+		
+		</div>
+
+
+		<h1 class="status" >voting status</h1>
+
+		<% var no_contestant =  Number(voting.total_contestants) %>
+
+		<% var max  = 0 ;%>
+
+		<% var top_contestant = " " %>
+		
+		<% for(var i = 0 ; i< no_contestant; i++) { %>
+
+		<% if(voting.contestants[i].votes.length > max ) { %>
+
+		<% max = voting.contestants[i].votes.length ; %>
+
+		<% top_contestant = voting.contestants[i].name ; } } %>
+
+
+		<% if (now1 < voting.closing_at ) { %> 
+
+			<% if(max > 0) { %>
+
+				<h1 class="status"><%=top_contestant %> is in the leading position </h1>
+
+			<% } %>
+
+			<% if(max == 0) { %>
+
+				<h1 class="status">No one is votted yet</h1>
+
+			<% } %>
+
+		<% } %>
+
+	
+		<% if (now1 >= voting.closing_at) { %>
+
+		<h2 class="status"><%=top_contestant %> is the winner</h2>
+
+		<% } %>
+
+	</div>
+
+
+ <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"
+            integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw"
+            crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+
+
+</html>

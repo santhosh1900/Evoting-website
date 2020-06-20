@@ -1,0 +1,64 @@
+in order to website work you need to install the nodejs and following npm packages
+command is :
+npm install <package name> --save
+
+example : npm install express --save
+
+each nd every packages are important ****
+
+
+the package names are
+
+
+    express
+     ejs
+     async 
+
+     body-parser 
+
+    cloudinary 
+
+    connect-flash 
+    cookie-parser 
+    dotenv 
+     
+    
+
+    express-session 
+
+    locus 
+    mapbox-gl 
+
+    method-override 
+    moment 
+
+    mongoose 
+
+    multer 
+    node-geocoder 
+
+    nodemailer 
+    nodemon 
+    passport 
+    passport-local 
+     passport-local-mongoose 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

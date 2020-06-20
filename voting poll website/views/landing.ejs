@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>vote bazzar</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheet/landing.css">
+          <!-- this modernziser script is help to update the css file accordinf the version of the each browser	 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+
+      <!-- flash messages -->
+      <div class="container ">
+    <% if(error && error.length > 0) { %>
+    <div class="alert alert-danger text-center" role="alert">
+      <h4 > <%= error %> </h4> 
+    </div>
+    <% } %>
+    
+    <% if(success && success.length >0) { %>
+    <div class="alert alert-success " role="alert">
+      <h4 class="text-center"> <%= success %> </h4> 
+    </div>
+    <%  } %>
+  </div>
+
+ <!-- end of flash messages -->
+
+
+  <div class="container">
+  
+    
+    <div id="landing-header">
+ 		<h1>welcome to vote bazzar</h1>
+		<a href="/voting" class="btn btn-lg btn-success">View All Voting pools</a>
+
+
+
+
+		<hr class="style-two">
+    </div>
+    
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+</div>
+</body>
+</html>

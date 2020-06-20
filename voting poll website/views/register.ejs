@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>register</title>
+</head>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  		 	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<!--since the __dirname is used in app.js file there is no need to write full path of main css file 	 -->
+			<link rel="stylesheet" type="text/css" href="/stylesheet/main.css">
+<body>
+
+<%- include("./partials/header") %>
+<div class="row">
+    <h1 style="text-align: center">Sign Up</h1>
+    <div style="width: 30%; margin: 25px auto;">
+        <!-- <form action="/register" method="post"> -->
+		<form action="/register" method="POST" >
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="username" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password"   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  required placeholder="password">
+            </div>
+			 <div class="form-group">
+                <input class="form-control" type="text" name="firstname" placeholder="first name" required>
+            </div>
+			 <div class="form-group">
+                <input class="form-control" type="text" name="lastname" placeholder="last name" required>
+            </div>
+			 <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="ex:john@gmail.com" require>
+            </div>
+			<div class="form-group">
+                <input class="form-control" type="text" name="adminCode" placeholder="Admin Code">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+            </div>
+        </form>
+         <a style="margin-top: 15px" class="btn btn-sm btn-success" href="/voting">Go Back</a>
+    </div>
+</div>
+
+
+
+
+ pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+
+
+
+
+
+ <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"
+            integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw"
+            crossorigin="anonymous"></script>
+
+
+</body>
+</html>

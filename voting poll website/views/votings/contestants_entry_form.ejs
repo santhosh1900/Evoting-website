@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contestant entry form</title>
+</head>
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  		 	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<!--since the __dirname is used in app.js file there is no need to write full path of main css file 	 -->
+			<link rel="stylesheet" type="text/css" href="/stylesheet/main.css">
+
+
+<body>
+	 <%- include("../partials/header") %>
+
+	
+	<div class="container">
+	<div class="row">
+		<h1 style="text-align: center">
+				Enter the <%= voting.total_contestants %> contestants details 
+		</h1>
+		<div style="width : 30%; margin : 40px auto;">
+                                 <!--enctype is use to upload image instead of urls		 -->
+		<form action="/voting/new/<%= voting._id %>/contestants_form" method="POST">
+		<% var no = voting.total_contestants %>	
+		<% for(var i = 0 ; i < no ; i++){ %>
+				<div class="form-group">
+					<label for="name">Enter the name of  contestant <%= i+1 %> </label>
+						<input class="form-control" type="text" id="name" name="name[<%=i%>]" placeholder="name" required>
+				</div>
+				<% } %>
+				<div class="form-group">
+					<button class="btn btn-primary  btn-lg btn-block"> Next</button>
+				</div>
+				<a href="/voting">go back</a>	
+	</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+ <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"
+            integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw"
+            crossorigin="anonymous"></script>
+
+
+
+
+	</body>
+</html>
